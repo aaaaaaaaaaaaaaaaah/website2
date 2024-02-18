@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<script>
+  function includeHTML() {
+  var z, i, elmnt, file, xhttp;
+  /* Loop through a collection of all HTML elements: */
+  z = document.getElementsByTagName("*");
+  for (i = 0; i < z.length; i++) {
+      elmnt = z[i];
+      /*search for elements with a certain atrribute:*/
+      file = elmnt.getAttribute("w3-include-html");
+      if (file) {
+          /* Make an HTTP request using the attribute value as the file name: */
+          xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function () {
+              if (this.readyState == 4) {
+                  if (this.status == 200) { elmnt.innerHTML = this.responseText; }
+                  if (this.status == 404) { elmnt.innerHTML = "Page not found."; }
+                  /* Remove the attribute, and call this function once more: */
+                  elmnt.removeAttribute("w3-include-html");
+                  includeHTML();
+              }
+          }
+          xhttp.open("GET", file, true);
+          xhttp.send();
+          /* Exit the function: */
+          return;
+      }
+  }
+}
+</script>
+<body>
+  <div w3-include-html="header.html"></div>
+  <script>includeHTML();</script>
+
+    <div class = "generic_padding">
+        <!-- start of title thingy part -->
+        <div class="jumbotron">
+            <h1 class="display-4" style="padding-left: 6%;"> Treatment Options</h1>
+            <div style="background-color: #8e70db; color: #8e70db; width: 39%; height: 3px; margin-bottom: 2%;margin-left: 6%;">,</div>
+            <p class="lead" style="padding-left: 6%; width: 94%;">While there is no way to reverse sun damage, here are some ways you could reduce its appearance. Consult your dermatologist to find the best treatment for you.</p>
+           <hr class="my-4">
+          </div>
+    </div>
+
+    <div class = "special_padding">
+        <h4 style = "font-weight: lighter;"> <i> <b> <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#8e70db" class="bi bi-postcard-heart-fill" viewBox="0 0 16 16">
+            <path d="M2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2zm6 2.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0m3.5.878c1.482-1.42 4.795 1.392 0 4.622-4.795-3.23-1.482-6.043 0-4.622M2 5.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5m0 2a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5m0 2a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5"/>
+          </svg> Cosmetic Treatments - </b> </i> reduce the appearance of sun damage</h4>
+        <div class="accordion accordion-flush" id="accordionFlushExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-headingOne">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                  Resurfacing Lasers
+                </button>
+              </h2>
+              <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">Fractional resurfacing lasers use laser energy to rejuvenate skin and minimize the appearance of brown spots and fine lines, as well as improve texture 
+                    and the appearance of enlarged pores. Other lasers, such as picosecond and nanosecond lasers, can address pigmentation concerns.</div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                  Chemical Peel
+                </button>
+              </h2>
+              <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">Trichloracetic acid or glycolic acid to the skin, dermatologists can remove brown spots and actinic keratoses 
+                    and improve the tone and texture of photoaged skin.</div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                    Topical Retinoids
+                </button>
+              </h2>
+              <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">Topical retinoids (like tretinoin) can be prescribed to even out your skin tone and address roughness and fine lines that result from photoaging.</div>
+              </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingFive">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
+                    Cryotherapy 
+                  </button>
+                </h2>
+                <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">Liquid nitrogen is sometimes used to freeze noncancerous age spots or actinic keratoses, and after a few days, the spots become dark and shed off.</div>
+                </div>
+              </div>
+        </div>
+
+        <h4 style = "font-weight: lighter;"> <i> <b> <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#8e70db" class="bi bi-prescription2" viewBox="0 0 16 16">
+            <path d="M7 6h2v2h2v2H9v2H7v-2H5V8h2z"/>
+            <path d="M2 1a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1v10.5a1.5 1.5 0 0 1-1.5 1.5h-7A1.5 1.5 0 0 1 3 14.5V4a1 1 0 0 1-1-1zm2 3v10.5a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 .5-.5V4zM3 3h10V1H3z"/>
+          </svg> Preventative Treatment - </b> </i> remove abnormal spots before they become dangerous </h4>
+
+        <div class="accordion accordion-flush" id="accordionFlushExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-headingFour">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                    Photodynamic Therapy 
+                </button>
+              </h2>
+              <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body"> Remove precancerous spots that can result from sun exposure. A topical medication is applied, then a blue or red fluorescent light is used to activate the medication.
+                    This destroys precancerous cells while preserving normal cells.
+                    </div>
+              </div>
+            </div>
+        </div>
+          
+    </div>
+    <div w3-include-html="footer.html"></div> 
+    <script>includeHTML();</script>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+</html>

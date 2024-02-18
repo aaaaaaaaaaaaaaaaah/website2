@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<script>
+  function includeHTML() {
+  var z, i, elmnt, file, xhttp;
+  /* Loop through a collection of all HTML elements: */
+  z = document.getElementsByTagName("*");
+  for (i = 0; i < z.length; i++) {
+      elmnt = z[i];
+      /*search for elements with a certain atrribute:*/
+      file = elmnt.getAttribute("w3-include-html");
+      if (file) {
+          /* Make an HTTP request using the attribute value as the file name: */
+          xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function () {
+              if (this.readyState == 4) {
+                  if (this.status == 200) { elmnt.innerHTML = this.responseText; }
+                  if (this.status == 404) { elmnt.innerHTML = "Page not found."; }
+                  /* Remove the attribute, and call this function once more: */
+                  elmnt.removeAttribute("w3-include-html");
+                  includeHTML();
+              }
+          }
+          xhttp.open("GET", file, true);
+          xhttp.send();
+          /* Exit the function: */
+          return;
+      }
+  }
+}
+</script>
+<body>
+  <div w3-include-html="header.html"></div>
+  <script>includeHTML();</script>
+
+    <div class = "generic_padding">
+        <div class="jumbotron">
+            <p class="display-5" style="padding-left: 6%;">Causes and Effects</p><img src="sun_fr_fr.png" class="sun_image_size" style="width: 5%; height: 6%; margin-left: 38%; margin-top: -9%;">
+            <div style="background-color: #ffdf2b; color: #ffdf2b; width: 38%; height: 3px; margin-top: -3%; margin-bottom: 2%;margin-left: 6%;">,</div>
+            <p class="lead" style="margin-left: 6%; width: 88%; text-align: justify;">The causes of sun burn and sun damage is based on the UV light from the sun. When a person isn't wearing sunscreen or using any other 
+                form of sun protection, UV light could cause severe and irreversible damage. It penetrates deep to a point where it can change the person's DNA. 
+                Since this is at a cellular level, the damage will not present instantly. It takes some time for physical symptoms to appear, and 
+                by then it cannot be reversed. 
+                </p>
+                <div style="margin-top: 3%; margin-bottom: 3%;" ><hr class="my-4"></div>
+            
+            <h4 class = "bold_italics" style="padding-left: 6%;  margin-bottom: 3%;">How do different types of UV light affect the body?</h4> 
+            <div style="background-color: #ffdf2b; color: #ffdf2b; width: 48%; height: 3px; margin-top: -2%; margin-bottom: 3%;margin-left: 6%;">,</div>
+        </div>
+        <div style="padding-left: 6%; width: 95%">
+        <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  UVA Radiation
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <strong>UVA penetrates through all layers of the skin.</strong> 
+                  UVA Light is a form of UV radiation. Its longer wavelength is what allows it to penetrate through all layers of the skin.
+                  Repeated UVA exposure causes the skin to age faster.
+                  UVA exposure is commonly associated with tans and sunburns in certain individuals. 
+                  Thus, there is no such thing as a safe tan.
+                  UVA Light affects the collagen, which provides the structure, strength and support to one's skin. Cappilaries which are a 
+                  type of vessels are also damaged by these rays, and they are needed to transport oxygen and nutrients throughout the body.
+                  Finally, elastin fibres are damaged, which is responsible for maintaining the skin's elasticity. Overall, the DNA of a person 
+                  can be altered. Since the UVA radiation hits the skin, it changes the DNA which causes mutation and defects. This could create
+                  cancerous cells, and are therefore dangerous.
+                  In sunscreen, broad-spectrum protection is what they use to associate UVA radiation, and to protect you from it. 
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  UVB Radiation
+                </button>
+              </h2>
+              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <strong>UVB only penetrates the outermost layer of the skin, but may cause more damage. </strong>UVB light, known for its shorter wavelength, 
+                  is primarily responsible for irritating the outer layer of the skin. Its high energy level  leads to the formation of precancerous 
+                  cells and is commonly associated with skin burning. Due to its significant impact on skin health, UVB protection is a critical component in 
+                  sunscreens, indicated by the Sun Protection Factor (SPF). The SPF number provides a guideline for how long it would take for the sun's radiation 
+                  to redden your skin with the product applied, compared to without it. UVB radiation poses a threat to skin health, with its effects 
+                  being most powerful from mid-morning until mid-afternoon. Its intensity increases at higher altitudes and when reflected off surfaces like snow 
+                  or ice. However, UVB rays can be filtered and do not penetrate glass, offering some protection when indoors.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top: 3%; margin-bottom: 3%;" ><hr class="my-4"></div>
+        <h4 class = "bold_italics" style="padding-left: 6%;">What are the effects of UV Exposure?</h4> 
+        <img src="sad_boy.jpg" alt="sunburned boy" style="width: 5.5%; height: 6%; margin-left: 39%; margin-top: -8%;">
+        <div style="background-color: #ffdf2b; color: #ffdf2b; width: 40%; height: 3px; margin-top: -2%; margin-bottom: 3%;margin-left: 6%;">,</div>
+        
+        <p style="font-weight: lighter; padding-left: 6%; margin-top: -2%; width: 95%"> The sun's rays causes damage to the skin's cells; and this damage is not immediately apparent upon looking at the skin.
+        With enough exposure, our skin cells can change shape, multiply faster, and become cancerous.</p>
+        
+    </div>
+    <div w3-include-html="footer.html"></div> 
+    <script>includeHTML();</script>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+</html>
